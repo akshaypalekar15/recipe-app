@@ -148,27 +148,6 @@ class App extends Component {
           </div>
         )}
 
-        {/* <PanelGroup accordion id="accordion-example">
-          {recipes.map((recipe, index) => (
-            <Panel eventKey={index} key={index}>
-              <Panel.Heading>
-                <Panel.Title toggle>{recipe.recipeName}</Panel.Title>
-              </Panel.Heading>
-              <Panel.Body collapsible>
-                <ol>
-                  {recipe.ingredients.map((item)=>(
-                    <li key={item}>{item}</li>               
-                  ))}
-                </ol>
-                <ButtonToolbar>
-                  <Button bsStyle='danger' onClick={(event)=>this.deleteRecipe(index)}>Delete Recipe</Button>
-                  <Button bsStyle='default'>Edit Recipie</Button>
-                </ButtonToolbar>
-              </Panel.Body>
-            </Panel>
-          ))}
-        </PanelGroup>   */}
-
         <Modal show={this.state.showAdd} onHide={this.close}>
           <Modal.Header closeButton>
             <Modal.Title>
@@ -191,7 +170,6 @@ class App extends Component {
                 </ControlLabel>
                   <FormControl
                     type='textarea'
-                    // value={newestRecipe.recipeName}
                     placeholder='Enter Ingredients(Seperate by commas)'
                     onChange={(event) => this.updateNewRecipe(newestRecipe.recipeName, event.target.value.split(','))}
                     value={newestRecipe.ingredients}
@@ -204,46 +182,6 @@ class App extends Component {
             </Modal.Footer>
           </Modal.Header>
         </Modal>
-
-
-        {/* <Modal show={this.state.showEdit} onHide={this.close}>
-          <Modal.Header closeButton>
-            <Modal.Title>
-              Edit Recipe
-            </Modal.Title>
-            <Modal.Body>
-
-              <FormGroup controlId='formBasicText'>
-                <ControlLabel>
-                  Recipe Name
-                </ControlLabel>
-                <FormControl
-                type='text'
-                value={recipes[currentIndex].recipeName}
-                placeholder='Enter Recipe Name'
-                onChange={(event)=>this.updateNewRecipe(event.target.value, newestRecipe.ingredients)}
-                ></FormControl>
-              </FormGroup>
-
-              <FormGroup controlId='formControlsTextarea'>
-                <ControlLabel>
-                  Ingredients
-                </ControlLabel>
-                <FormControl
-                type='textarea'
-                // value={newestRecipe.recipeName}
-                placeholder='Enter Ingredients(Seperate by commas)'
-                onChange={(event)=>this.updateNewRecipe(newestRecipe.recipeName, event.target.value.split(','))}
-                value={newestRecipe.ingredients}
-                ></FormControl>
-              </FormGroup>
-
-            </Modal.Body>
-            <Modal.Footer>
-              <Button bsStyle='primary' onClick={(event)=>this.saveNewRecipe()}>Save Recipe</Button>
-            </Modal.Footer>
-          </Modal.Header>
-        </Modal> */}
 
         <Button bsStyle='primary' onClick={(event) => this.open('showAdd', currentIndex)}>Add Recipie</Button>
       </div>
